@@ -1,0 +1,22 @@
+<%- include("dheader" ,{emails:mails, title:"Transactions"}) %>
+<div class="container rounded bg-white mt-5 mb-5 " style="width:100%;height:100%;min-height:1px;">
+    <% for(j=0;j<transacts[0].itemsposted.length;++j){ %>
+        <div class="" style="padding:10px">
+            <span> <b>Item Name:</b>
+                <%=transacts[0].itemsposted[j].item%>
+                    <br>
+            </span>
+            <p><b>Item Description:</b>
+                <%=transacts[0].itemsposted[j].description%>
+                    
+            </p>
+            <span><b>Item Quantity</b>
+                <%=transacts[0].itemsposted[j].quantity%>
+                <hr>
+            </span>
+        </div>
+    <%}%> 
+        
+    
+</div>
+<%- include("dfooter") %>
