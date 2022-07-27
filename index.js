@@ -34,7 +34,7 @@ app.get("/profile/:z", function (req, res) {
 })
 app.get("/additem/:z", function (req, res) {
     var profilemails = req.params.z; 
-    res.render("additem.ejs", { mails: profilemails });
+    res.render("addItem.ejs", { mails: profilemails });
 })
 app.get("/transaction/:x", async function (req, res) {
     var profilemails = req.params.x;
