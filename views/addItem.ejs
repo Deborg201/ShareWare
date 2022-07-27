@@ -1,0 +1,34 @@
+<%- include("dheader.ejs",{emails:mails , title:"Add Item"}) %>
+</div>
+<div class="shareproducts">
+    <div class=" container rounded bg-white mt-5 mb-5">
+        <form action ="/additem" method="post" autocomplete="off">
+            <div class="title">
+                <i class="fas fa-pencil-alt"></i>
+                <h2>Add Item</h2>
+            </div>
+            <div class = " container rounded bg-white mt-5 mb-5 " >
+            <!-- <div class="info"> -->
+                <label class="labels">Item:</label> 
+                <input class="fname form-control" type="text" name="item" placeholder="Name of Item">
+                <br><label class="labels">Description:</label>
+                <input class="fname form-control" type="text" name="description" placeholder="Brief Description">
+                <br><label class="labels">Quantity</label>
+                <input class="fname form-control" type="number" name="quantity" placeholder="Quantity">
+                <input type="hidden" name="profilemail" value="<%= mails%>" >
+                
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" name="checkbox"><span>I have cross-checked the information and want to share the
+                    item.
+                </span>
+            </div>
+            <br>
+            <div class="mt-5 text-center">
+                <input class="btn btn-primary profile-button" type="submit" value="Add Item">
+            </div>
+        </form>
+
+    </div>
+</div>
+<%- include("dfooter.ejs") %>

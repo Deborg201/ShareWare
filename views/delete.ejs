@@ -1,0 +1,22 @@
+<%- include("dheader",{emails:mails , title:"Delete Account"})%>
+<link rel="stylesheet" href="/css/popups.css">
+<div class="deletecontainer" >
+    <div class="delete">
+<a href="#0" class="cd-popup-trigger">Delete</a>
+<!-- delete popup on click -->
+<div class="cd-popup" role="alert">
+    <div class="cd-popup-container">
+        <p>Are you sure you want to delete this account?</p>
+        <ul class="cd-buttons">
+            <li><a href="/deleteacc/<%=mails%>">Yes</a></li>
+            <li><a href="/dashboard/<%=mails%>">No</a></li>
+        </ul>
+        <a href="#0" class="cd-popup-close img-replace">Close</a>
+    </div>
+</div> 
+</div>
+</div>
+<script src="/js/jquery-3.4.1.min.js"></script>
+<script src="/js/popus.js"></script>
+
+<%-include("dfooter")%>
