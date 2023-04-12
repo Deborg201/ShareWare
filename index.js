@@ -16,7 +16,7 @@ const Item = require(__dirname + "/database/database.js");
 
 
 app.set("view-engine", "ejs");
-app.use(express.static(path.join(__dirname,"static")));
+app.use(express.static(path.join(__dirname,"/static")));
 app.use(bodyparser.urlencoded({ extended: true }));
 
 const PORT = process.env.PORT || 3000;
