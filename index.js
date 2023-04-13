@@ -12,7 +12,7 @@ const path = require('path')
 
 // database connection
 
-const Item = require(__dirname + "/database/database.js");
+const Item = require(path.join(__dirname,"/database/database.js"));
 
 
 app.set("view-engine", "ejs");

@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-<<<<<<< HEAD
   "engines": {
     "node": "16.x",
     "npm": "8.12.1"
@@ -11,20 +10,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
-=======
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
->>>>>>> c1a36df185637230b54c70e0b845efbac83fe930
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",
-<<<<<<< HEAD
     "dotenv": "^16.0.1",
-=======
->>>>>>> c1a36df185637230b54c70e0b845efbac83fe930
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "mongoose": "^6.4.1"
