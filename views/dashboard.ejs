@@ -13,8 +13,99 @@
         <h1 class="text-center">
             Items Shared
         </h1>
+        <div class="wrap">
+        <div class="search">
+            <input  id="searchInput" type="text" class="searchTerm" placeholder="Search..." oninput="filterItems()">
+            <button type="submit" class="searchButton">
+            </button>
+        </div>
+        </div>
         <!-- Looping through and creating a bubble and corresponding detail popup for each item. -->
-        <% for(i=0; i<items.length;++i){ %>
+        
+        <% for (let i=0; i < items.length; ++i) { %>
+            <% for (let j=0; j < items[i].itemsposted.length; ++j) { %>
+                <div class="speechbubble">
+                    <div class="box">
+                        <div class="aalign">
+                            <!-- Use a unique ID for each popup -->
+                            <a class="button" href="#popup<%= i + 1 %>-<%= j + 1 %>"></a>
+                            <span><b> Item:</b>
+                                <%= items[i].itemsposted[j].item %><br>
+                            </span>
+                            <p><b>Item Description:</b>
+                                <%= items[i].itemsposted[j].description %><br>
+                            </p>
+                            <p><span class="qty"><b>Item Quantity</b>
+                                    <%= items[i].itemsposted[j].quantity %><br>
+                                </span></p>
+                        </div>
+                    </div>
+        
+                    <!-- Use a unique ID for each popup -->
+                    <div id="popup<%= i + 1 %>-<%= j + 1 %>" class="overlay">
+                        <div class="popup">
+                            <a class="close" href="#">&times;</a>
+                            <div class="content">
+                                <span><b> Name:</b>
+                                    <%= items[i].name %>
+                                        <%= items[i].surname %><br>
+                                </span>
+                                <span><b>Email:</b>
+                                    <%= items[i].email %><br>
+                                </span>
+                                <span><b>Mobile:</b>
+                                    <%= items[i].mobile %><br>
+                                </span>
+                                <span><b>Roll No:</b>
+                                    <%= items[i].roll %> <b>Year:</b>
+                                        <%= items[i].year %><br>
+                                </span>
+                                <span><b>Address:-</b> <br><b>Room No : </b>
+                                    <%= items[i].room %><b> Hostel Name : </b>
+                                        <%= items[i].hostel %><br>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }; %>
+                <% }; %>
+
+
+        
+
+                <script>
+                    function filterItems() {
+                        var searchInput = document.getElementById('searchInput').value.toLowerCase();
+
+                        // Loop through all speech bubbles
+                        var speechBubbles = document.querySelectorAll('.speechbubble');
+                        speechBubbles.forEach(function (speechBubble) {
+                            var itemText = speechBubble.textContent.toLowerCase();
+
+                            // Show or hide speech bubble based on the search input
+                            if (itemText.includes(searchInput)) {
+                                speechBubble.style.display = 'block';
+                            } else {
+                                speechBubble.style.display = 'none';
+                            }
+                        });
+                    }
+                </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <% for(i=0; i<items.length;++i){ %>
             <% for(j=0;j<items[i].itemsposted.length;++j){ %>
                 <div class="speechbubble">
                     <div class="box">
@@ -65,7 +156,7 @@
                     </div>
                 </div>
                     <%};%>
-                    <%}%> 
+                    <%}%>  -->
 
     </div>
 
